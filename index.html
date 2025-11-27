@@ -23,10 +23,77 @@
 
         <select name="procesador" id="procesador">
             <option value="celeron">Celeron: $900</option>
-            <option value="intelI3">Intel I3: $1500</option>
-            <option value=""></option>
-            <option value=""></option>
+            <option value="intelI3">Intel i3: $1500</option>
+            <option value="intelI5">Intel i5: $3500</option>
+            <option value="intelI7">Intel i7: $5000</option>
         </select>
+
+        <!-- 500GB — $500
+        750GB — $800
+        1TB — $1000
+        250 GB SSD — $900
+        500 GB SSD — $1380 -->
+
+        <select name="discoDuro" id="discoDuro">
+            <option value="500GB">500GB: $500</option>
+            <option value="750GB">750GB: $800</option>
+            <option value="1TB">1TB: $1000</option>
+            <option value="250GBSSD">250 GB SSD: $900</option>
+            <option value="500GBSSD">500 GB SSD: $1380</option>
+        </select>
+
+        <!-- 4 GB — $600
+        8 GB — $1050
+        16 GB — $1950 -->
+
+        <select name="memoriaRam" id="memoriaRam">
+            <option value="4GB">4 GB: $600</option>
+            <option value="8GB">8 GB: $1050</option>
+            <option value="16GB">16 GB: $1950</option>
+        </select>
+
+        <!-- 17"
+        19"
+        21.5"
+        24"
+        27"
+        32" -->
+
+        <select name="monitor" id="monitor">
+            <option value="17">17"</option>
+            <option value="19">19"</option>
+            <option value="21.5">21.5"</option>
+            <option value="24">24"</option>
+            <option value="27">27"</option>
+            <option value="32">32"</option>
+        </select>
+
+        <!-- Mouse, Teclado, Bocinas, Webcam, UPS, Alfombrilla, Control Gamer, Luz RGB, Silla Gamer, Adaptador WiFi, Hub USB, Audífonos, Monitor adicional, Soporte, Ventilador, Micrófono, Lector SD, Cable HDMI, Base refrigerante, Caja de herramientas. -->
+        
+        <label type="text" name="accesorios" id="accesorios">Accesorios adicionales:</label>
+        <label for="mouse">Mouse</label>
+        <input type="checkbox" name="mouse" id="mouse" value="mouse">
+        <label for="teclado">Teclado</label>
+        <input type="checkbox" name="teclado" id="teclado" value="teclado">
+        <label for="bocinas">Bocinas</label>    
+        <input type="checkbox" name="bocinas" id="bocinas" value="bocinas">
+        <label for="webcam">Webcam</label>
+        <input type="checkbox" name="webcam" id="webcam" value="webcam">
+        <label for="ups">UPS</label>    
+        <input type="checkbox" name="ups" id="ups" value="ups">
+        <label for="alfombrilla">Alfombrilla</label>
+        <input type="checkbox" name="alfombrilla" id="alfombrilla" value="alfombrilla">
+        <label for="controlGamer">Control Gamer</label>
+        <input type="checkbox" name="controlGamer" id="controlGamer" value="controlGamer">
+        <label for="luzRGB">Luz RGB</label>
+        <input type="checkbox" name="luzRGB" id="luzRGB" value="luzRGB">
+        <label for="sillaGamer">Silla Gamer</label>
+        <input type="checkbox" name="sillaGamer" id="sillaGamer" value="sillaGamer">
+        <label for="adaptadorWiFi">Adaptador WiFi</label>
+        <input type="checkbox" name="adaptadorWiFi" id="adaptadorWiFi" value="adaptadorWiFi">
+        <label for="hubUSB">Hub USB</label>
+
+
     </form>
 </body>
 </html>
