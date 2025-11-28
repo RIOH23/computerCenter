@@ -4,29 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMPUTER CENTER</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>COMPUTER CENTER</h1>
     <p>Diseña y configura tu propia computadora personal de videojuegos</p>
 
-    <form action="" name="elegirComponentes">
+    <form action="" id="elegirComponentes">
+
+        <div class="card">
+        <label for="gabinete">Gabinete:</label>
+        <br>
         <select name="gabinete" id="gabinete">
             <option value="minitorre"> Minitorre: $700</option>
             <option value="torre">Torre: $1200</option>
             <option value="desktop"> Desktop: $550</option>
             <option value="gamer">Gamer: $2500</option>
         </select>
+        </div>
+        <br>
         <!-- Celeron — $900
         Intel i3 — $1500
         Intel i5 — $3500
         Intel i7 — $5000 -->
 
+        <div class="card">
+        <label for="procesador">Procesador:</label>
+        <br>
         <select name="procesador" id="procesador">
             <option value="celeron">Celeron: $900</option>
             <option value="intelI3">Intel i3: $1500</option>
             <option value="intelI5">Intel i5: $3500</option>
             <option value="intelI7">Intel i7: $5000</option>
         </select>
+        </div>
+        <br>
 
         <!-- 500GB — $500
         750GB — $800
@@ -34,6 +46,9 @@
         250 GB SSD — $900
         500 GB SSD — $1380 -->
 
+        <div class="card">
+        <label for="discoDuro">Disco duro:</label>
+        <br>
         <select name="discoDuro" id="discoDuro">
             <option value="500GB">500GB: $500</option>
             <option value="750GB">750GB: $800</option>
@@ -41,16 +56,22 @@
             <option value="250GBSSD">250 GB SSD: $900</option>
             <option value="500GBSSD">500 GB SSD: $1380</option>
         </select>
+        </div>
+        <br>
 
         <!-- 4 GB — $600
         8 GB — $1050
         16 GB — $1950 -->
-
+        <div class="card">
+        <label for="memoriaRam">Memoria RAM:</label>
+        <br>
         <select name="memoriaRam" id="memoriaRam">
             <option value="4GB">4 GB: $600</option>
             <option value="8GB">8 GB: $1050</option>
             <option value="16GB">16 GB: $1950</option>
         </select>
+        </div>
+        <br>
 
         <!-- 17"
         19"
@@ -59,6 +80,9 @@
         27"
         32" -->
 
+        <div class="card">
+        <label for="monitor">Monitor:</label>
+        <br>
         <select name="monitor" id="monitor">
             <option value="17">17"</option>
             <option value="19">19"</option>
@@ -67,9 +91,12 @@
             <option value="27">27"</option>
             <option value="32">32"</option>
         </select>
+        </div>
+        <br>
 
         <!-- Mouse, Teclado, Bocinas, Webcam, UPS, Alfombrilla, Control Gamer, Luz RGB, Silla Gamer, Adaptador WiFi, Hub USB, Audífonos, Monitor adicional, Soporte, Ventilador, Micrófono, Lector SD, Cable HDMI, Base refrigerante, Caja de herramientas. -->
         
+        <div class="card">
         <label type="text" name="accesorios" id="accesorios">Accesorios adicionales:</label>
         <label for="mouse">Mouse</label>
         <input type="checkbox" name="mouse" id="mouse" value="mouse">
@@ -92,8 +119,142 @@
         <label for="adaptadorWiFi">Adaptador WiFi</label>
         <input type="checkbox" name="adaptadorWiFi" id="adaptadorWiFi" value="adaptadorWiFi">
         <label for="hubUSB">Hub USB</label>
+        <input type="checkbox" name="hubUSB" id="hubUSB" value="hubUSB">
+        <label for="audifonos">Audífonos</label>
+        <input type="checkbox" name="audifonos" id="audifonos" value="audifonos">
+        <label for="monitorAdicional">Monitor adicional</label>
+        <input type="checkbox" name="monitorAdicional" id="monitorAdicional" value="monitorAdicional">
+        <label for="soporte">Soporte</label>
+        <input type="checkbox" name="soporte" id="soporte" value="soporte">
+        <label for="ventilador">Ventilador</label>
+        <input type="checkbox" name="ventilador" id="ventilador" value="ventilador">
+        <label for="microfono">Micrófono</label>
+        <input type="checkbox" name="microfono" id="microfono" value="microfono">
+        <label for="lectorSD">Lector SD</label>
+        <input type="checkbox" name="lectorSD" id="lectorSD" value="lectorSD">
+        <label for="cableHDMI">Cable HDMI</label>
+        <input type="checkbox" name="cableHDMI" id="cableHDMI" value="cableHDMI">
+        <label for="baseRefrigerante">Base refrigerante</label>
+        <input type="checkbox" name="baseRefrigerante" id="baseRefrigerante" value="baseRefrigerante">
+        <label for="cajaHerramientas">Caja de herramientas</label>
+        <input type="checkbox" name="cajaHerramientas" id="cajaHerramientas" value="cajaHerramientas">
+        </div>
+        <br>
 
-
+        <div id="button">
+            <button type="button" onclick="calcularTodo()">Enviar</button>
+            <input type="number" readonly hidden name="total" id="total">
+        </div>
+        
+        <footer>
+            <p>Diseñado por Ricardo Ismael Ontiveros Hernandez</p>
+        </footer>
     </form>
+    
+    <script>
+        var elegirComponentes = document.getElementById("elegirComponentes");
+        
+        function calcularTodo() {
+            var total = 0;
+            var gabinete = elegirComponentes.gabinete.value;
+
+            switch (gabinete) {
+                case "minitorre":
+                    total += 700;
+                    break;
+                case "torre":
+                    total += 1200;
+                    break;
+                case "desktop":
+                    total += 550;
+                    break;
+                case "gamer":
+                    total += 2500;
+                    break;
+            }
+
+            var procesador = elegirComponentes.procesador.value;
+
+            switch (procesador) {
+                case "celeron":
+                    total += 900;
+                    break;
+                case "intelI3":
+                    total += 1500;
+                    break;
+                case "intelI5":
+                    total += 3500;
+                    break;
+                case "intelI7":
+                    total += 5000;
+                    break;
+            }
+
+            var discoDuro = elegirComponentes.discoDuro.value;
+
+            switch (discoDuro) {
+                case "500GB":
+                    total += 500;
+                    break;
+                case "750GB":
+                    total += 800;
+                    break;
+                case "1TB":
+                    total += 1000;
+                    break;
+                case "250GBSSD":
+                    total += 900;
+                    break;
+                case "500GBSSD":
+                    total += 1380;
+                    break;
+            }
+
+            var memoriaRam = elegirComponentes.memoriaRam.value;
+
+            switch (memoriaRam) {
+                case "4GB":
+                    total += 600;
+                    break;
+                case "8GB":
+                    total += 1050;
+                    break;
+                case "16GB":
+                    total += 1950;
+                    break;
+            }
+
+            var monitor = elegirComponentes.monitor.value;
+            switch (monitor) {
+                case "17":
+                    total += 2000;
+                    break;
+                case "19":
+                    total += 2500;
+                    break;
+                case "21.5":
+                    total += 3500;
+                    break;
+                case "24":
+                    total += 4500;
+                    break;
+                case "27":
+                    total += 6000;
+                    break;
+                case "32":
+                    total += 8000;
+                    break;
+            }
+
+
+            alert("El precio total de su configuración es: $" + total);
+            console.log(total);
+        }
+        
+
+
+    </script>
 </body>
+
+
 </html>
